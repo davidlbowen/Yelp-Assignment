@@ -12,10 +12,10 @@ class ViewController: UIViewController {
     var client: YelpClient!
     
     // You can register for Yelp API keys here: http://www.yelp.com/developers/manage_api_keys
-    let yelpConsumerKey = "vxKwwcR_NMQ7WaEiQBK_CA"
-    let yelpConsumerSecret = "33QCvh5bIF5jIHR5klQr7RtBDhQ"
-    let yelpToken = "uRcRswHFYa1VkDrGV6LAW2F8clGh5JHV"
-    let yelpTokenSecret = "mqtKIxMIR4iBtBPZCmCLEb-Dz3Y"
+    let yelpConsumerKey = "01E6srx8wb-t6zH8krspgA"
+    let yelpConsumerSecret = "IqA3_aT38mtI7xAXh_OmLmXdZ50"
+    let yelpToken = "EUawIwgrIsEAyIyoXVGFTU-5mjj2OKZU"
+    let yelpTokenSecret = "winmtEC5PhTikBtPe0zWzqQx_18"
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
