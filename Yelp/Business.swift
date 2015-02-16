@@ -5,8 +5,6 @@
 //  Created by David Bowen on 2/9/15.
 //
 
-import UIKit
-
 class Business: NSObject {
    
     let milesPerMeter: Double = 0.000621371
@@ -35,9 +33,13 @@ class Business: NSObject {
         var distInMeters = business.valueForKeyPath("distance")! as Double
         self.distInMiles = distInMeters * milesPerMeter
         
-        var street = business.valueForKeyPath("location.address") as? [String]
-        var neighborhoods = (business.valueForKeyPath("location.neighborhoods")) as? [String]
-        self.address = "\(street![0]), \(neighborhoods![0])"
+        var streets = business.valueForKeyPath("location.address") as? [String] ?? [""]
+        var street = streets.isEmpty ? "" : streets[0]
+        
+        var neighborhoods = (business.valueForKeyPath("location.neighborhoods")) as? [String] ?? [""]
+        var neighborhood = neighborhoods.isEmpty ? "" : neighborhoods[0]
+
+        self.address = "\(street), \(neighborhood)"
 
         for cat in business.valueForKey("categories") as [[String]] {
             self.categoryNames.append(cat[0])

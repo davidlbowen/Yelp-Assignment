@@ -5,7 +5,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, FiltersViewControllerDelegate
 {
     var client: YelpClient!
     var businesses: [Business] = []
@@ -29,17 +29,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 50
         
+        loadData(nil)
+        NSLog("data (re)loaded from Yelp")
+    }
+    
+    func loadData(categories: String?) {
         client = YelpClient(consumerKey: yelpConsumerKey, consumerSecret: yelpConsumerSecret, accessToken: yelpToken, accessSecret: yelpTokenSecret)
         
-        client.searchWithTerm("Thai", success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
-            println("JSON: " + response.description)
+        client.searchWithTerm(categories, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
             let responseDictionary = response as NSDictionary
             let responseArray = responseDictionary["businesses"] as? NSArray
             self.businesses = Business.businesses(responseArray!)
             self.tableView.reloadData()
-        }) { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
-            println(error)
+            }) { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                println(error)
         }
     }
     
@@ -57,8 +62,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCellWithIdentifier("businessCell") as BusinessCell
         let business = businesses[indexPath.row]
         cell.setBusiness(business, row: indexPath.row)
-        NSLog("row=\(indexPath.row), name=\(business.name!)")
+        NSLog("**** row=\(indexPath.row), name=\(business.name!)")
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let filtersViewController = (segue.destinationViewController as UINavigationController).topViewController as FiltersViewController
+        filtersViewController.delegate = self
+        NSLog("prepareForSegue")
+    }
+    
+    func filtersViewController(viewController: FiltersViewController, didSetFilters filters: [Int: Bool]) {
+        var filterKeys: [String] = []
+        for (key, value) in filters {
+            if (!value) {
+                filterKeys.append(categories[key].key)
+            }
+        }
+        if !filterKeys.isEmpty {
+            loadData(",".join(filterKeys))
+            NSLog("category filters: \(filterKeys)")
+        }
     }
     
 }
