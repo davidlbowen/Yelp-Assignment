@@ -28,6 +28,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.rowHeight = UITableViewAutomaticDimension
         
         client = YelpClient(consumerKey: yelpConsumerKey, consumerSecret: yelpConsumerSecret, accessToken: yelpToken, accessSecret: yelpTokenSecret)
         
