@@ -56,7 +56,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCellWithIdentifier("businessCell") as BusinessCell
         let business = businesses[indexPath.row]
         cell.setBusiness(business, row: indexPath.row)
-        NSLog("row=\(indexPath.row), name=\(business.name)")
+        NSLog("row=\(indexPath.row), name=\(business.name!)")
         return cell
     }
     

@@ -17,6 +17,7 @@
 		222D8A7D19CCFAE000D2DB53 /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D8A7C19CCFAE000D2DB53 /* YelpClient.swift */; };
 		4A49B64A1A89D17500DECE6C /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A49B6491A89D17500DECE6C /* Business.swift */; };
 		4ACCBCB61A8FCA26008F5DC9 /* BusinessCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACCBCB51A8FCA26008F5DC9 /* BusinessCell.swift */; };
+		4AEC2A9A1A9016BC006E545E /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEC2A991A9016BC006E545E /* FiltersViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		222D8A7E19CCFAEF00D2DB53 /* Yelp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Yelp-Bridging-Header.h"; sourceTree = "<group>"; };
 		4A49B6491A89D17500DECE6C /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		4ACCBCB51A8FCA26008F5DC9 /* BusinessCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessCell.swift; sourceTree = "<group>"; };
+		4AEC2A991A9016BC006E545E /* FiltersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
 		78C9F59969661A9B3C5CA2F9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BD39E8B73E96DEE030C25253 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C56EF0CE844A4EE5819C72AF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +103,7 @@
 				222D8A6319CCF9F900D2DB53 /* LaunchScreen.xib */,
 				222D8A5819CCF9F900D2DB53 /* Supporting Files */,
 				222D8A7E19CCFAEF00D2DB53 /* Yelp-Bridging-Header.h */,
+				4AEC2A991A9016BC006E545E /* FiltersViewController.swift */,
 			);
 			path = Yelp;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				222D8A5D19CCF9F900D2DB53 /* ViewController.swift in Sources */,
 				222D8A7D19CCFAE000D2DB53 /* YelpClient.swift in Sources */,
 				4A49B64A1A89D17500DECE6C /* Business.swift in Sources */,
+				4AEC2A9A1A9016BC006E545E /* FiltersViewController.swift in Sources */,
 				222D8A5B19CCF9F900D2DB53 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
