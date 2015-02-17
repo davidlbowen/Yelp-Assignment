@@ -21,8 +21,9 @@ class Business: NSObject {
     init(business: NSDictionary){
         super.init()
         
-        var imageUrlString = business.valueForKey("image_url") as String
-        self.imageUrl = NSURL(string: imageUrlString)
+        if let imageUrlString = business.valueForKey("image_url") as? String {
+            self.imageUrl = NSURL(string: imageUrlString)
+        }
         
         var ratingImageUrlString = business.valueForKey("rating_img_url_small") as String
         self.ratingImageUrl = NSURL(string: ratingImageUrlString)

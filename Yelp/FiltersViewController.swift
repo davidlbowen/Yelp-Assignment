@@ -17,7 +17,8 @@ class FiltersViewController: UIViewController, UITableViewDataSource, UITableVie
 
     @IBOutlet weak var filtersTableView: UITableView!
     weak var delegate: FiltersViewControllerDelegate?
-    private var filterValues = [Int : Bool]()
+    var filterValues = [Int : Bool]()
+    let sectionHeaders = ["Sort by", "General Features"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +33,10 @@ class FiltersViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories.count
+        return section == 0 ? 1 : categories.count
     }
 
     @IBAction func onCancel(sender: AnyObject) {
-        delegate?.filtersViewController(self, didSetFilters: filterValues)
         dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -46,13 +46,18 @@ class FiltersViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCellWithIdentifier("filterCell") as FilterCell;
-        cell.filterLabel.text = categories[indexPath.row].name
-        cell.delegate = self
-        cell.filterSwitch.on = filterValues[indexPath.row] ?? true
-        NSLog("#### row=\(indexPath.row), \(cell.filterLabel.text!) is on: \(cell.filterSwitch.on)")
-        return cell
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCellWithIdentifier("sortCell") as SortTableViewCell
+            return cell
+        }
+        else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("filterCell") as FilterCell;
+            cell.filterLabel.text = categories[indexPath.row].name
+            cell.delegate = self
+            cell.filterSwitch.on = filterValues[indexPath.row] ?? false
+            NSLog("#### Row \(indexPath.row), \(cell.filterLabel.text!) is on: \(cell.filterSwitch.on)")
+            return cell
+        }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -65,6 +70,15 @@ class FiltersViewController: UIViewController, UITableViewDataSource, UITableVie
         filterValues[indexPath.row] = value
         NSLog("filterCell[\(indexPath.row)] = \(value)")
     }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionHeaders[section]
+    }
+    
     
     /*
     // MARK: - Navigation

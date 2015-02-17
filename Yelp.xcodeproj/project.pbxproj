@@ -15,7 +15,9 @@
 		222D8A6519CCF9F900D2DB53 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 222D8A6319CCF9F900D2DB53 /* LaunchScreen.xib */; };
 		222D8A7119CCF9F900D2DB53 /* YelpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D8A7019CCF9F900D2DB53 /* YelpTests.swift */; };
 		222D8A7D19CCFAE000D2DB53 /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D8A7C19CCFAE000D2DB53 /* YelpClient.swift */; };
+		4A02F8341A92C5DA004303AB /* SortPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A02F8331A92C5DA004303AB /* SortPicker.swift */; };
 		4A0A0D6C1A9284E80041AF6B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0A0D6B1A9284E80041AF6B /* Category.swift */; };
+		4A2FDC371A92C1790037D644 /* SortTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2FDC361A92C1790037D644 /* SortTableViewCell.swift */; };
 		4A49B64A1A89D17500DECE6C /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A49B6491A89D17500DECE6C /* Business.swift */; };
 		4ACCBCB61A8FCA26008F5DC9 /* BusinessCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACCBCB51A8FCA26008F5DC9 /* BusinessCell.swift */; };
 		4AEC2A9A1A9016BC006E545E /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEC2A991A9016BC006E545E /* FiltersViewController.swift */; };
@@ -45,7 +47,9 @@
 		222D8A7019CCF9F900D2DB53 /* YelpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpTests.swift; sourceTree = "<group>"; };
 		222D8A7C19CCFAE000D2DB53 /* YelpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
 		222D8A7E19CCFAEF00D2DB53 /* Yelp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Yelp-Bridging-Header.h"; sourceTree = "<group>"; };
+		4A02F8331A92C5DA004303AB /* SortPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortPicker.swift; sourceTree = "<group>"; };
 		4A0A0D6B1A9284E80041AF6B /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		4A2FDC361A92C1790037D644 /* SortTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortTableViewCell.swift; sourceTree = "<group>"; };
 		4A49B6491A89D17500DECE6C /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		4ACCBCB51A8FCA26008F5DC9 /* BusinessCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessCell.swift; sourceTree = "<group>"; };
 		4AEC2A991A9016BC006E545E /* FiltersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 			children = (
 				4ACCBCB51A8FCA26008F5DC9 /* BusinessCell.swift */,
 				4AEC2A9B1A9277AE006E545E /* FilterCell.swift */,
+				4A2FDC361A92C1790037D644 /* SortTableViewCell.swift */,
+				4A02F8331A92C5DA004303AB /* SortPicker.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -326,11 +332,13 @@
 				4AEC2A9C1A9277AE006E545E /* FilterCell.swift in Sources */,
 				4ACCBCB61A8FCA26008F5DC9 /* BusinessCell.swift in Sources */,
 				222D8A5D19CCF9F900D2DB53 /* ViewController.swift in Sources */,
+				4A2FDC371A92C1790037D644 /* SortTableViewCell.swift in Sources */,
 				222D8A7D19CCFAE000D2DB53 /* YelpClient.swift in Sources */,
 				4A49B64A1A89D17500DECE6C /* Business.swift in Sources */,
 				4AEC2A9A1A9016BC006E545E /* FiltersViewController.swift in Sources */,
 				222D8A5B19CCF9F900D2DB53 /* AppDelegate.swift in Sources */,
 				4A0A0D6C1A9284E80041AF6B /* Category.swift in Sources */,
+				4A02F8341A92C5DA004303AB /* SortPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

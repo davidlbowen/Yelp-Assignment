@@ -231,6 +231,43 @@
                                             <outlet property="filterSwitch" destination="PIA-Mw-xQr" id="BNp-BG-C0W"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="sortCell" id="PGN-y0-z47" customClass="SortTableViewCell" customModule="Yelp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PGN-y0-z47" id="36w-rY-mfP">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort By" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFx-cu-xuT">
+                                                    <rect key="frame" x="8" y="11" width="58" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TBD" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neQ-NJ-DzO">
+                                                    <rect key="frame" x="525" y="13" width="34" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="9" id="w7B-kg-DMX"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="w7B-kg-DMX"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="neQ-NJ-DzO" secondAttribute="trailing" constant="41" id="KDO-0Y-t4o"/>
+                                                <constraint firstItem="mFx-cu-xuT" firstAttribute="top" secondItem="36w-rY-mfP" secondAttribute="top" constant="11" id="Lgj-Ly-EW1"/>
+                                                <constraint firstAttribute="bottom" secondItem="mFx-cu-xuT" secondAttribute="bottom" constant="11" id="MqX-dd-C9E"/>
+                                                <constraint firstItem="neQ-NJ-DzO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mFx-cu-xuT" secondAttribute="trailing" constant="8" id="tAV-qO-kX4"/>
+                                                <constraint firstItem="mFx-cu-xuT" firstAttribute="centerY" secondItem="neQ-NJ-DzO" secondAttribute="centerY" constant="-2" id="wHO-s4-oV7"/>
+                                                <constraint firstItem="mFx-cu-xuT" firstAttribute="leading" secondItem="36w-rY-mfP" secondAttribute="leading" constant="8" id="wt7-8i-Rie"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
@@ -264,7 +301,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sc1-Ih-9e3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2513" y="418"/>
+            <point key="canvasLocation" x="2513" y="416"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HZ2-JO-ZJD">

@@ -25,7 +25,13 @@ class BusinessCell: UITableViewCell {
         address.text = business.address
         categories.text = ", ".join(business.categoryNames)
         dollars.text = "$$" // TODO
-        businessImageView.setImageWithURL(business.imageUrl!)
+        
+        if let imageUrl = business.imageUrl {
+            businessImageView.setImageWithURL(imageUrl)
+        } else {
+            // set a default image?
+        }
+        
         ratingImageView.setImageWithURL(business.ratingImageUrl!)
     }
     

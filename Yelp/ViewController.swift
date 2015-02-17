@@ -9,6 +9,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 {
     var client: YelpClient!
     var businesses: [Business] = []
+    private var filterValues = [Int : Bool]()
     
     // You can register for Yelp API keys here: http://www.yelp.com/developers/manage_api_keys
     let yelpConsumerKey = "01E6srx8wb-t6zH8krspgA"
@@ -69,13 +70,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let filtersViewController = (segue.destinationViewController as UINavigationController).topViewController as FiltersViewController
         filtersViewController.delegate = self
+        filtersViewController.filterValues = self.filterValues
         NSLog("prepareForSegue")
     }
     
     func filtersViewController(viewController: FiltersViewController, didSetFilters filters: [Int: Bool]) {
         var filterKeys: [String] = []
         for (key, value) in filters {
-            if (!value) {
+            if (value) {
                 filterKeys.append(categories[key].key)
             }
         }
@@ -83,6 +85,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             loadData(",".join(filterKeys))
             NSLog("category filters: \(filterKeys)")
         }
+        filterValues = filters
     }
     
 }
